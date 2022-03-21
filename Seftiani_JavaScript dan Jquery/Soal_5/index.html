@@ -1,0 +1,127 @@
+<html>
+<head>
+<title></title>
+  <link href="https://fonts.googleapis.com/css?family=Righteous&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+<style type="text/css">
+
+body {
+  background:#ffa0ff;
+  font-size: 12px;
+}
+
+body, button, input {
+  font-family: 'Righteous', cursive;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+}
+
+#kotak {
+padding: 220px;
+width: 600px;
+margin: auto;
+
+}
+#form {
+  padding: 20px;
+  background: #999393;
+  border-radius: 15px;
+
+}
+
+#form p{
+color: #af0c58;
+}
+
+.app-title {
+  text-transform: uppercase;
+  font-size: 26px;
+  padding: 10px;
+}
+
+</style>
+</head>
+<body>
+<div class="app-title">
+<div class="animated infinite pulse">
+Seftiani Ayu Lestari <br> PTI B <br> 2020
+</div>
+</div>
+<div id="kotak">
+
+<div id="form">
+<form method="post" onsubmit="return Validasi();">
+<table align="center">
+<tr>
+<td align="left"><p><b>Email</b></p></td>
+<td><p><b>:</b></p></td>
+<td align="left"><input type="text" size="30" id="email"></td>
+
+</tr>
+
+</tr>
+<tr>
+<td align="left"><p><b>No. Telepon</b></p></td>
+<td><p><b>:</b></p></td>
+<td align="left"><input type="text" id="notelepon"></td>
+
+</tr>
+
+<tr>
+<td></td>
+<td></td>
+<td><input type="submit" name="submit" value="Kirim"></td>
+
+</tr>
+</form>
+</table>
+
+</div>
+</div>
+
+<script type="text/javascript">
+function Validasi(){
+
+var angka = "0123456789";
+var x = 0;
+var email=document.getElementById('email').value;
+var notelepon=document.getElementById('notelepon').value;
+if (email=="" || notelepon ==""){
+alert("Form Ada Yang Kosong");
+
+}
+
+if ((email.indexOf('@',0)==-1) || (email.indexOf('.',0)==-1)){	
+alert("Penulisan Email Kurang Tepat");
+
+}
+
+
+if (notelepon.length!=12) {
+alert("Panjang Nomor Telepon Harus 12");
+return false;
+}
+
+for (var i=0; i < notelepon.length; i++) {
+
+digitb = "" + notelepon.substring(i, i+1);
+if (angka.indexOf(digita) == "-1") {
+window.alert("Karakter pada Kode POs yang dimasukkan salah (harus angka semua)");
+return false;
+}
+
+if (angka.indexOf(digitb) == "-1") {
+window.alert("Karakter pada No Telepon yang dimasukkan salah (harus angka semua)");
+return false;
+}
+
+}
+return true;
+
+}
+
+</script>
+
+</body>
+
+</html>
